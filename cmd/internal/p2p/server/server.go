@@ -7,15 +7,6 @@ import (
 	"sync"
 )
 
-type Peer struct {
-	conn net.Conn
-}
-
-func (p *Peer) Send(b []byte) error {
-	_, err := p.conn.Write(b)
-	return err
-}
-
 type ServerConfig struct {
 	ListenAddr string
 	Version    string
